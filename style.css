@@ -32,13 +32,17 @@ body {
   transition: transform 0.6s;
   transform-origin: top;
 }
-
-.message {
+  .message {
   position: absolute;
   bottom: -100%;
-  padding: 20px;
-  font-size: 15px;
-  transition: bottom 0.6s;
+  padding: 22px;
+  font-size: 16px;
+  line-height: 1.5;
+  background: linear-gradient(180deg, #ffffff, #fdf2ff);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: bottom 0.7s ease;
+  text-align: center;
 }
 
 .envelope.open .top {
@@ -72,4 +76,13 @@ body {
     transform: translateY(-110vh) scale(1.6);
     opacity: 0;
   }
+.envelope.open .message {
+  bottom: 35px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
 }
