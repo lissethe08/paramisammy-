@@ -47,9 +47,11 @@ h1 {
 .message {
   position: absolute;
   bottom: -100%;
-  left: 7.5%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 85%;
-  padding: 22px;
+  max-height: 130px;
+  padding: 18px;
   font-size: 16px;
   line-height: 1.5;
   background: linear-gradient(180deg, #ffffff, #fdf2ff);
@@ -58,9 +60,8 @@ h1 {
   text-align: center;
   transition: bottom 0.7s ease;
   box-sizing: border-box;
-  z-index: 3;
+  z-index: 5;
 }
-
 /* TEXTO DEL FRENTE */
 .front-text {
   position: absolute;
@@ -80,7 +81,7 @@ h1 {
 }
 
 .envelope.open .message {
-  bottom: 30px;
+  bottom: 20px;
   animation: pulse 2s ease-in-out infinite;
 }
 
