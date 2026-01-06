@@ -1,0 +1,56 @@
+body {
+  background: linear-gradient(180deg, #c084fc, #a855f7);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.envelope {
+  width: 300px;
+  height: 180px;
+  background: #ede9fe;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #a855f7;
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  transition: transform 0.6s;
+  transform-origin: top;
+}
+
+.message {
+  position: absolute;
+  bottom: -100%;
+  padding: 20px;
+  font-size: 15px;
+  transition: bottom 0.6s;
+}
+
+.envelope.open .top {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .message {
+  bottom: 30px;
+}
+
+.text {
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+}
