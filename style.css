@@ -60,7 +60,7 @@ h1 {
   transition: bottom 0.7s ease;
   box-sizing: border-box;
   z-index: 5;
-}}
+}
 /* TEXTO DEL FRENTE */
 .front-text {
   position: absolute;
