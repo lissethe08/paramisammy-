@@ -6,23 +6,31 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
 .container {
   text-align: center;
-  padding: 30px 20px;
 }
 
+h1 {
+  color: white;
+  margin-bottom: 40px;
+}
+
+/* SOBRE */
 .envelope {
   width: 300px;
   height: 180px;
   background: #ede9fe;
   position: relative;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
+  margin: auto;
 }
 
+/* TAPA DEL SOBRE */
 .top {
   position: absolute;
   top: 0;
@@ -30,35 +38,60 @@ body {
   height: 100%;
   background: #a855f7;
   clip-path: polygon(0 0, 100% 0, 50% 55%);
-  transition: transform 0.6s;
   transform-origin: top;
+  transition: transform 0.6s ease;
+  z-index: 4;
 }
-  .message {
+
+/* TARJETA */
+.message {
   position: absolute;
   bottom: -100%;
+  left: 7.5%;
+  width: 85%;
   padding: 22px;
   font-size: 16px;
   line-height: 1.5;
   background: linear-gradient(180deg, #ffffff, #fdf2ff);
   border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: bottom 0.7s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   text-align: center;
+  transition: bottom 0.7s ease;
+  box-sizing: border-box;
+  z-index: 3;
 }
 
+/* TEXTO DEL FRENTE */
+.front-text {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #7e22ce;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ABIERTO */
 .envelope.open .top {
   transform: rotateX(180deg);
 }
 
 .envelope.open .message {
   bottom: 30px;
+  animation: pulse 2s ease-in-out infinite;
 }
 
+/* TEXTO INFERIOR */
 .text {
   margin-top: 20px;
   color: white;
   font-size: 18px;
 }
+
+/* EMOJIS FLOTANTES */
 .float {
   position: fixed;
   bottom: -20px;
@@ -68,6 +101,7 @@ body {
   pointer-events: none;
 }
 
+/* ANIMACIONES */
 @keyframes floatUp {
   0% {
     transform: translateY(0) scale(1);
@@ -77,23 +111,10 @@ body {
     transform: translateY(-110vh) scale(1.6);
     opacity: 0;
   }
-.envelope.open .message {
-  bottom: 35px;
-  animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.03); }
   100% { transform: scale(1); }
-}.front-text {
-  position: absolute;
-  bottom: 25px;
-  width: 100%;
-  text-align: center;
-  font-size: 17px;
-  font-weight: 600;
-  color: #7e22ce;
-  pointer-events: none;
-  font-family: 'Arial', sans-serif;
 }
