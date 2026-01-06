@@ -50,7 +50,6 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   width: 85%;
-  max-height: 130px;
   padding: 18px;
   font-size: 16px;
   line-height: 1.5;
@@ -61,7 +60,7 @@ h1 {
   transition: bottom 0.7s ease;
   box-sizing: border-box;
   z-index: 5;
-}
+}}
 /* TEXTO DEL FRENTE */
 .front-text {
   position: absolute;
@@ -81,7 +80,7 @@ h1 {
 }
 
 .envelope.open .message {
-  bottom: 20px;
+  bottom: 15px;
   animation: pulse 2s ease-in-out infinite;
 }
 
