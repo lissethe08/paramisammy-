@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(180deg, #c084fc, #a855f7);
   font-family: Arial, sans-serif;
@@ -10,18 +14,25 @@ body {
 
 .container {
   text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
 }
 
+/* SOBRE */
 .envelope {
-  width: 300px;
-  height: 180px;
+  width: 100%;
+  max-width: 320px;
+  height: 190px;
   background: #ede9fe;
   position: relative;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
+  margin: auto;
 }
 
+/* TAPA */
 .top {
   position: absolute;
   top: 0;
@@ -29,28 +40,43 @@ body {
   height: 100%;
   background: #a855f7;
   clip-path: polygon(0 0, 100% 0, 50% 55%);
-  transition: transform 0.6s;
+  transition: transform 0.7s ease;
   transform-origin: top;
 }
 
+/* MENSAJE */
 .message {
   position: absolute;
   bottom: -100%;
-  padding: 20px;
+  padding: 18px;
   font-size: 15px;
-  transition: bottom 0.6s;
+  line-height: 1.4;
+  transition: bottom 0.7s ease;
 }
 
+/* ANIMACIÓN */
 .envelope.open .top {
   transform: rotateX(180deg);
 }
 
 .envelope.open .message {
-  bottom: 30px;
+  bottom: 35px;
 }
 
+/* TEXTO INFERIOR */
 .text {
-  margin-top: 20px;
+  margin-top: 25px;
   color: white;
-  font-size: 18px;
+  font-size: 17px;
+}
+
+/* EXTRA PARA CELULARES MUY PEQUEÑOS */
+@media (max-width: 360px) {
+  .message {
+    font-size: 14px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
 }
