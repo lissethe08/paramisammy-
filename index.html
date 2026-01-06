@@ -1,32 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mensaje importante</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Para Samantha 💌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #7a2cff, #c45bff);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .titulo {
+      margin-top: 30px;
+      font-size: 48px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 10px rgba(255,255,255,0.6);
+      z-index: 10;
+    }
+
+    .sobre {
+      margin-top: 120px;
+      background: #fff6d8;
+      border-radius: 12px;
+      padding: 25px;
+      width: 260px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    .mensaje {
+      display: none;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .mensaje p {
+      margin: 8px 0;
+    }
+
+    .sobre.abierto .mensaje {
+      display: block;
+    }
+
+    .instruccion {
+      margin-top: 15px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .corazon {
+      position: absolute;
+      font-size: 18px;
+      animation: flotar 8s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes flotar {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="envelope" onclick="openEnvelope()">
-  <div class="top"></div>
+  <div class="titulo">Para Samantha 💌</div>
 
-  <!-- TEXTO EN EL SOBRE -->
-  <div class="front-text">Para Samantha 💌</div>
-
-  <div class="message">    
-      <p>
-        Te quierooo, Sammy 💖<br><br>
-        Que tengas hoy un lindo día, pequeña 🌸<br>
-        y suerte en tus clases 
-      </p>
+  <div class="sobre" onclick="abrirSobre(this)">
+    💌
+    <div class="mensaje">
+      <p><strong>Te quierooo, Sammy 💖</strong></p>
+      <p><strong>Suerte en tus clases ✨📚</strong></p>
+      <p>Que tengas hoy un lindo día, pequeña 🌸</p>
     </div>
   </div>
 
-  <p class="text">Toca el sobre 💌</p>
-</div>
+  <div class="instruccion">Toca el sobre 💌</div>
 
-<script src="script.js"></script>
+  <script>
+    function abrirSobre(el) {
+      el.classList.toggle("abierto");
+    }
+
+    const emojis = ["❤️","💖","🌸","💕"];
+    setInterval(() => {
+      const c = document.createElement("div");
+      c.className = "corazon";
+      c.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 10000);
+    }, 400);
+  </script>
+
 </body>
 </html>
